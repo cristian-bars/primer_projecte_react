@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+/*import logo from './logo.svg';*/
+/*import Book from './book'; */
 import './App.css';
+import data from './data';
+import BookCard from './BookCard';
+
+/********* Exercici 2  *****************/
+/*export default () => { 
+  return ( 
+      <div> 
+          <Book />
+      </div> 
+    );
+}; */
+
+/********** Exercici 3 *****************/
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      {data.map(book => (
+        <BookCard 
+          key={book.name}
+          name={book.title}
+          author={book.author}/>
+      ))}
     </div>
-  );
+  )
 }
 
 export default App;
